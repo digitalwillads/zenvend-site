@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The AI agents — ZenVend.ai</title>
+<meta name="description" content="Seven specialist AI agents run quietly in the background of every ZenVend marketplace — moderating listings, scoring fraud, tuning pricing, and reporting around the clock, configurable per marketplace." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M9 27 C 12 12, 28 12, 31 24' stroke='%23a8714b' stroke-width='3.4' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='31' cy='24' r='2.4' fill='%23a8714b'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="index.html" class="logo" aria-label="ZenVend home">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 27 C 12 12, 28 12, 31 24" stroke="#a8714b" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="31" cy="24" r="2.4" fill="#a8714b"/></svg>
+      <span class="wordmark">zenvend<span class="dot">.ai</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="product.html">Product</a></li>
+        <li><a href="agents.html" aria-current="page">Agents</a></li>
+        <li><a href="marketplaces.html">Marketplaces</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a href="contact.html" class="btn btn--primary">Book a demo <span class="arrow" aria-hidden="true">→</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="agents.html" aria-current="page">Agents</a></li>
+      <li><a href="marketplaces.html">Marketplaces</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="btn btn--primary btn--block">Book a demo →</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="page-hero__inner">
+        <p class="breadcrumb reveal"><a href="index.html">Home</a> · Agents</p>
+        <span class="eyebrow reveal" data-delay="1">The quiet crew</span>
+        <h1 class="reveal" data-delay="1">Seven agents.<br>One calm operation.</h1>
+        <p class="reveal" data-delay="2">
+          Once your marketplace is live, a library of specialist AI agents runs in the background
+          of every tenant — moderating, scoring, pricing, and reporting around the clock. Every
+          agent is configurable per marketplace, with sensible defaults out of the box.
+        </p>
+        <div class="page-hero__actions reveal" data-delay="3">
+          <a href="contact.html" class="btn btn--primary">Book a demo <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="pricing.html" class="btn btn--ghost">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== THE SEVEN AGENTS ===================== -->
+  <section class="section section--white">
+    <div class="wrap">
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 01</div>
+          <h3>Moderation</h3>
+          <p>Reviews every new listing the moment it's submitted, checking it against your marketplace's policies. High-severity violations are auto-rejected, while genuine edge cases are queued for a quick human glance.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Listings</span>
+            <span class="tag-chip">Policy</span>
+            <span class="tag-chip">Auto-reject</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m11.5 2 2.4 5 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L3.6 7.8 9 7Z"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 02</div>
+          <h3>Listing Intelligence</h3>
+          <p>Scores the quality of each listing and suggests concrete improvements to titles, photos, and copy. It also generates discovery tags automatically, so strong listings surface without extra effort from the seller.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Quality score</span>
+            <span class="tag-chip">SEO tags</span>
+            <span class="tag-chip">Suggestions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 03</div>
+          <h3>Fraud Detection</h3>
+          <p>Scores every transaction in real time as it happens, weighing velocity, identity, and payment signals. Anything that looks suspicious is frozen before funds move, then routed for review rather than lost.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Real-time</span>
+            <span class="tag-chip">Risk score</span>
+            <span class="tag-chip">Freeze</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 04</div>
+          <h3>Growth Optimization</h3>
+          <p>Continuously analyzes pricing, SEO, and inventory across the marketplace to find revenue left on the table. It surfaces specific, ranked opportunities you can act on — not another vague dashboard.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Pricing</span>
+            <span class="tag-chip">SEO</span>
+            <span class="tag-chip">Inventory</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M8 13h8M8 17h5"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 05</div>
+          <h3>Analytics Intelligence</h3>
+          <p>Turns raw marketplace activity into a clear weekly report written for an operator, not an analyst. It highlights what changed, what it means, and what genuinely deserves your attention.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Weekly reports</span>
+            <span class="tag-chip">Trends</span>
+            <span class="tag-chip">Alerts</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2Z"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 06</div>
+          <h3>Marketplace Architect</h3>
+          <p>Runs continuous health checks across the marketplace's structure, catalog, and configuration. When something drifts out of shape, it flags the issue early and proposes the fix before it spreads.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Health checks</span>
+            <span class="tag-chip">Structure</span>
+            <span class="tag-chip">Continuous</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agent-detail reveal">
+        <div class="agent-detail__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div>
+        <div>
+          <div class="agent-detail__num">Agent 07</div>
+          <h3>Workflow</h3>
+          <p>Automates the repetitive operational flows a marketplace runs on — seller onboarding, abandoned-cart recovery, and return management. Each sequence runs on its own, nudging the right party at the right moment.</p>
+          <div class="agent-detail__tags">
+            <span class="tag-chip">Onboarding</span>
+            <span class="tag-chip">Recovery</span>
+            <span class="tag-chip">Returns</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="agents-more reveal">Every agent is configurable per marketplace, with sensible defaults out of the box.</p>
+    </div>
+  </section>
+
+  <!-- ===================== ALWAYS ON ===================== -->
+  <section class="section section--warm">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow eyebrow--center">Always on</span>
+        <h2>The operations team<br>that never sleeps.</h2>
+        <p>A marketplace this capable would normally need a whole team — moderators, analysts, a fraud desk, a growth lead. ZenVend's agents cover that work from day one, quietly and around the clock, so a lean team — or a team of one — can run something that feels much larger.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="section final">
+    <div class="wrap">
+      <div class="final__card reveal">
+        <span class="eyebrow">Build without the chaos</span>
+        <h2>Your marketplace is<br>one sentence <span class="soft">away.</span></h2>
+        <p>Describe the idea. We'll handle the branding, the database, the payments, and the agents.
+        Then you press launch — and breathe.</p>
+        <div class="final__actions">
+          <a href="contact.html" class="btn btn--primary">Book a demo <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="pricing.html" class="btn btn--ghost">See pricing</a>
+        </div>
+        <p class="final__note">Launch in minutes · operate forever · live within days.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="logo" aria-label="ZenVend home">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 27 C 12 12, 28 12, 31 24" stroke="#a8714b" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="31" cy="24" r="2.4" fill="#a8714b"/></svg>
+          <span class="wordmark">zenvend<span class="dot">.ai</span></span>
+        </a>
+        <p>The AI operating system for online marketplaces. Describe your idea — we build the business, and the agents keep it running.</p>
+        <span class="status"><span class="pulse" aria-hidden="true"></span> Launch in minutes · operate forever</span>
+      </div>
+      <div class="footer__col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="product.html">Platform overview</a></li>
+          <li><a href="agents.html">The AI agents</a></li>
+          <li><a href="marketplaces.html">Marketplaces</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Book a demo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Marketplaces</h4>
+        <ul>
+          <li><a href="marketplaces.html">Rentals</a></li>
+          <li><a href="marketplaces.html">Services</a></li>
+          <li><a href="marketplaces.html">Bookings</a></li>
+          <li><a href="marketplaces.html">Community</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ZenVend.ai — Breathe. We've got the build.</span>
+      <span class="legal">
+        <a href="contact.html">Privacy</a>
+        <a href="contact.html">Terms</a>
+        <a href="contact.html">Security</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Platform — ZenVend.ai</title>
+<meta name="description" content="Describe a marketplace in plain language and ZenVend generates a branded storefront, a real Postgres database, Stripe payments, and a crew of AI agents — multi-tenant and multi-seller from the first screen." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M9 27 C 12 12, 28 12, 31 24' stroke='%23a8714b' stroke-width='3.4' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='31' cy='24' r='2.4' fill='%23a8714b'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="index.html" class="logo" aria-label="ZenVend home">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 27 C 12 12, 28 12, 31 24" stroke="#a8714b" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="31" cy="24" r="2.4" fill="#a8714b"/></svg>
+      <span class="wordmark">zenvend<span class="dot">.ai</span></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav__links">
+        <li><a href="product.html" aria-current="page">Product</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="marketplaces.html">Marketplaces</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="nav__cta">
+      <a href="contact.html" class="btn btn--primary">Book a demo <span class="arrow" aria-hidden="true">→</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="product.html" aria-current="page">Product</a></li>
+      <li><a href="agents.html">Agents</a></li>
+      <li><a href="marketplaces.html">Marketplaces</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html" class="btn btn--primary btn--block">Book a demo →</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="page-hero__inner">
+        <p class="breadcrumb reveal"><a href="index.html">Home</a> · Product</p>
+        <span class="eyebrow reveal" data-delay="1">The platform</span>
+        <h1 class="reveal" data-delay="1">One sentence in.<br>A complete marketplace out.</h1>
+        <p class="reveal" data-delay="2">
+          Describe a marketplace in plain language and ZenVend generates a branded storefront,
+          a real database, Stripe payments, and a crew of AI agents — a production business,
+          not a prototype.
+        </p>
+        <div class="page-hero__actions reveal" data-delay="3">
+          <a href="contact.html" class="btn btn--primary">Book a demo <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="agents.html" class="btn btn--ghost">Meet the agents</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW GENERATION WORKS ===================== -->
+  <section class="section section--white">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow eyebrow--center">Three calm steps</span>
+        <h2>How generation<br>actually works.</h2>
+        <p>No stack to assemble, no integrations to chase. You describe; ZenVend builds; it runs.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step__line" aria-hidden="true"></div>
+          <div class="step__num">1</div>
+          <h3>Describe your idea</h3>
+          <p>Tell ZenVend the marketplace you want — who's buying, who's selling, and how money should change hands. A sentence is enough to begin.</p>
+        </div>
+        <div class="step reveal" data-delay="1">
+          <div class="step__line" aria-hidden="true"></div>
+          <div class="step__num">2</div>
+          <h3>ZenVend builds it</h3>
+          <p>In 60–90 seconds we assemble the branding, the site, a real database, Stripe payments, and the agents — modeled for two sides from the first screen.</p>
+        </div>
+        <div class="step reveal" data-delay="2">
+          <div class="step__num">3</div>
+          <h3>Launch &amp; it runs itself</h3>
+          <p>Go live in days. From there the agents handle moderation, fraud, payouts, and growth — so the operation quietly runs without you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MULTI-TENANT / MULTI-SELLER ===================== -->
+  <section class="section section--warm">
+    <div class="wrap">
+      <div class="sec-head center reveal" style="margin-bottom:8px">
+        <span class="eyebrow eyebrow--center">Multi-tenant · multi-seller</span>
+        <h2>Built to run many,<br>not just one.</h2>
+      </div>
+
+      <div class="feat-block">
+        <div class="feat-block__copy reveal">
+          <span class="eyebrow">Multi-tenant by design</span>
+          <h3>Every marketplace, quietly isolated.</h3>
+          <p>A single deployment runs an unlimited number of marketplaces, each isolated at the database level with Postgres row-level security and at the routing level via subdirectory slug or custom domain. The marginal cost of one more marketplace is essentially zero.</p>
+          <ul class="feat-points">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Postgres row-level security per tenant</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Subdirectory slug or custom domain</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Unlimited marketplaces, one codebase</li>
+          </ul>
+        </div>
+        <div class="feat-block__art reveal" data-delay="1" aria-hidden="true">
+          <div class="art-db">
+            <div class="art-db__head"><span class="t">tenants</span><span class="art-db__pill">live · synced</span></div>
+            <div class="art-db__row"><span class="art-db__av"></span><span class="art-db__bar w70"></span><span class="art-db__amt">$84</span></div>
+            <div class="art-db__row"><span class="art-db__av"></span><span class="art-db__bar w85"></span><span class="art-db__amt">$220</span></div>
+            <div class="art-db__row"><span class="art-db__av"></span><span class="art-db__bar w50"></span><span class="art-db__amt">$36</span></div>
+            <div class="art-db__row"><span class="art-db__av"></span><span class="art-db__bar w70"></span><span class="art-db__amt">$159</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feat-block">
+        <div class="feat-block__copy reveal">
+          <span class="eyebrow">Multi-seller by design</span>
+          <h3>Unlimited vendors, one platform.</h3>
+          <p>Each marketplace supports unlimited independent vendors, each with their own Stripe Connect account, listings, orders, and payouts. You set a platform commission; ZenVend keeps your slice of every transaction via Stripe destination charges and application fees.</p>
+          <ul class="feat-points">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Per-vendor Stripe Connect accounts</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Destination charges + application fees</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Configurable commission per marketplace</li>
+          </ul>
+        </div>
+        <div class="feat-block__art reveal" data-delay="1" aria-hidden="true">
+          <div class="art-pay">
+            <div class="art-pay__circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <div class="art-pay__amt">$48,210</div>
+            <div class="art-pay__sub">cleared this week · 0 failed</div>
+            <div class="art-pay__split">
+              <div><div class="k">Vendor payout</div><div class="v">$43,389</div></div>
+              <div><div class="k">Platform fee</div><div class="v">$4,821</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAPABILITIES ===================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow eyebrow--center">The whole picture</span>
+        <h2>Capabilities at<br>a glance.</h2>
+        <p>Everything a real marketplace needs — generation, vendors, buyers, money, safety, and operations — in one calm system.</p>
+      </div>
+
+      <div class="cap-grid">
+        <article class="cap reveal">
+          <div class="cap__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8Z"/></svg></div>
+          <h3>Marketplace generation</h3>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> AI-prompt to branded marketplace in 60–90 seconds</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 14+ design styles, fully themeable (colors, typography, layout)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Curated initial catalog with verified product photography</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Custom-domain support and SEO-friendly two-pass HTML</li>
+          </ul>
+        </article>
+        <article class="cap reveal" data-delay="1">
+          <div class="cap__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 6a3 3 0 0 1 0 6M21 20a6 6 0 0 0-4-5.6"/></svg></div>
+          <h3>Vendor &amp; seller flow</h3>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Self-service vendor application with admin approval queue</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Per-vendor Stripe Connect with destination charges &amp; fees</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vendor portal: listings, orders, payouts, settings</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Configurable platform commission per marketplace</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Vendor suspension, dispute routing, audit trail</li>
+          </ul>
+        </article>
+        <article class="cap reveal" data-delay="2">
+          <div class="cap__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18l-1.5 9.5a2 2 0 0 1-2 1.5H6.5a2 2 0 0 1-2-1.5Z"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg></div>
+          <h3>Buyer experience</h3>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Search, browse, filter, save, message</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Stripe Checkout with full payment-method support</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Order tracking, returns, disputes</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Per-marketplace branding on every buyer page</li>
+          </ul>
+        </article>
+        <article class="cap reveal">
+          <div class="cap__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <h3>Payments &amp; money movement</h3>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Stripe Connect Express for vendor KYC &amp; payouts</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Destination charges with application fees</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> AES-256-GCM encryption for vendor keys in "own keys" mode</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Webhook handlers for every relevant Stripe event</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Stripe Billing for the operator's own subscription</li>
+          </ul>
+        </article>
+        <article class="cap reveal" data-delay="1">
+          <div class="cap__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Security &amp; compliance</h3>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Postgres row-level security on every table</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Server-side auth with httpOnly cookies (Supabase SSR)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Per-tenant data isolation at the database layer</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Stripe-hosted KYC keeps PCI scope off the platform</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Audit logging on all admin actions</li>
+          </ul>
+        </article>
+        <article class="cap reveal" data-delay="2">
+          <div class="cap__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg></div>
+          <h3>Operations</h3>
+          <ul>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Admin console: listings, users, orders, payments, vendors, agents</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Daily &amp; weekly automated reports</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Transactional email (Resend with custom-domain verification)</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cron-driven workflows on Docker or Vercel</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Dashboards for orders, GMV, fraud, payouts</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INFRASTRUCTURE ===================== -->
+  <section class="section section--warm">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow eyebrow--center">Developer &amp; deployment</span>
+        <h2>Production-grade<br>under the calm.</h2>
+        <p>Quiet on the surface, serious underneath — the stack a real marketplace runs on.</p>
+      </div>
+      <div class="incl">
+        <div class="incl__row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <div>
+            <h4>Modern web foundation</h4>
+            <p>Next.js 15 (App Router), React 19, and TypeScript end to end.</p>
+          </div>
+        </div>
+        <div class="incl__row reveal" data-delay="1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          <div>
+            <h4>Supabase Postgres</h4>
+            <p>Managed Postgres with Auth and Storage, row-level security throughout.</p>
+          </div>
+        </div>
+        <div class="incl__row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          <div>
+            <h4>Stripe, latest API</h4>
+            <p>Stripe API v2026-05-27 — Connect, Checkout, and Billing on the current version.</p>
+          </div>
+        </div>
+        <div class="incl__row reveal" data-delay="1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8v8l9 5 9-5Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg>
+          <div>
+            <h4>Deploy your way</h4>
+            <p>Docker Compose for self-hosting, or one-click deploy to Vercel.</p>
+          </div>
+        </div>
+        <div class="incl__row reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+          <div>
+            <h4>CI/CD built in</h4>
+            <p>Continuous integration and delivery via GitHub Actions.</p>
+          </div>
+        </div>
+        <div class="incl__row reveal" data-delay="1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>
+          <div>
+            <h4>17 database migrations</h4>
+            <p>Tenants, listings, orders, payments, vendors, agents, fraud, and email — all modeled.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="section final">
+    <div class="wrap">
+      <div class="final__card reveal">
+        <span class="eyebrow">Build without the chaos</span>
+        <h2>Your marketplace is<br>one sentence <span class="soft">away.</span></h2>
+        <p>Describe the idea. We'll handle the branding, the database, the payments, and the agents.
+        Then you press launch — and breathe.</p>
+        <div class="final__actions">
+          <a href="contact.html" class="btn btn--primary">Book a demo <span class="arrow" aria-hidden="true">→</span></a>
+          <a href="pricing.html" class="btn btn--ghost">See pricing</a>
+        </div>
+        <p class="final__note">Launch in minutes · operate forever · live within days.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="logo" aria-label="ZenVend home">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M9 27 C 12 12, 28 12, 31 24" stroke="#a8714b" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="31" cy="24" r="2.4" fill="#a8714b"/></svg>
+          <span class="wordmark">zenvend<span class="dot">.ai</span></span>
+        </a>
+        <p>The AI operating system for online marketplaces. Describe your idea — we build the business, and the agents keep it running.</p>
+        <span class="status"><span class="pulse" aria-hidden="true"></span> Launch in minutes · operate forever</span>
+      </div>
+      <div class="footer__col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="product.html">Platform overview</a></li>
+          <li><a href="agents.html">The AI agents</a></li>
+          <li><a href="marketplaces.html">Marketplaces</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Book a demo</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Marketplaces</h4>
+        <ul>
+          <li><a href="marketplaces.html">Rentals</a></li>
+          <li><a href="marketplaces.html">Services</a></li>
+          <li><a href="marketplaces.html">Bookings</a></li>
+          <li><a href="marketplaces.html">Community</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ZenVend.ai — Breathe. We've got the build.</span>
+      <span class="legal">
+        <a href="contact.html">Privacy</a>
+        <a href="contact.html">Terms</a>
+        <a href="contact.html">Security</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
