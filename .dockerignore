@@ -1,0 +1,6 @@
+.git
+.gitignore
+.shots
+README.md
+Dockerfile
+fly.toml
