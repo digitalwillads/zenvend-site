@@ -1,9 +1,11 @@
 # ZenVend — Gap-Closure Plan (vs MarketplaceOS)
 
 Source: `Marketplace Points.pdf` (competitive comparison, Zenvend vs "MarketplaceOS").
-Prepared: 2026-07-28. Status: in progress. A3 (marketing-site GA4) shipped
-dormant in PR #3; A2 (Intercom) boot snippet staged but inactive. Track B
-remains blocked on the missing platform repo.
+Prepared: 2026-07-28. Status: in progress. All 8 PDF items now reviewed. A3
+(marketing-site GA4) shipped dormant in PR #3; A2 (Intercom) boot snippet staged
+but inactive; A4 (on-page SEO pass, the marketing slice of B5) audited and deferred
+pending a confirmed production domain. Track B (6 platform/admin items, incl. the
+B5 SEO admin module) remains blocked on the missing platform repo.
 
 ## TL;DR
 
@@ -34,6 +36,40 @@ Nothing like this exists in the workspace. The `digitalwillads` org contains onl
 **Action:** confirm with the client where the Zenvend platform/admin codebase lives
 (different org, private repo, hosted no-code/SaaS backend?). All "Platform track"
 items below are blocked on this answer.
+
+### Search performed 2026-07-28 (blocker confirmed, not just assumed)
+
+Looked everywhere the account can reach; the platform/admin app is in none of them:
+- **`digitalwillads` org** — only `zenvend-site` (this repo) and `zenvend-design-concepts`.
+- **All 5 orgs the account belongs to** (`digitalwillads`, `Kneeshaw-Developments`,
+  `PraxisPackaging`, `RPGme-ai`, `The-Ambitious-Exec`) — the only repo named "Platform"
+  is `RPGme-ai/Platform`, an unrelated game frontend.
+- **Global GitHub search** for `zenvend` / `marketplaceos` — the only ZenVend hits are
+  our two site repos; everything else (`scgssk/ZenVend*`, `r-muresan/Zenvend`,
+  `aravikishan/MarketplaceOS`) is an unrelated third party.
+
+Conclusion: the Admin Panel app shown in the PDF (AI Agents tab, `app.<marketplace>`
+tenant URLs) does not exist in any repository we can access. B1 (and all of Track B)
+stays blocked until the client points us to it.
+
+### Note for the client conversation (relevant to B1)
+
+`agents.html` in THIS repo publicly advertises **"Seven agents. One calm operation"**
+and names exactly 7 (Moderation, Listing Intelligence, Fraud Detection, Growth
+Optimization, Analytics Intelligence, Marketplace Architect, Workflow). So the 7-vs-21
+gap is in our own live marketing copy, not just an internal tally. If B1 proceeds,
+`agents.html` must be updated too — and that page IS in a repo we hold.
+
+### Exact question to send the client (B1 unblock)
+
+> Where does the ZenVend platform / admin application live — the app behind the Admin
+> Panel screenshots in the PDF (the one with the AI Agents tab and `app.<marketplace>`
+> tenant URLs)? Is it a private repo in another org, a repo we haven't been granted
+> access to, or a hosted no-code / SaaS backend? We need that codebase (and its stack)
+> before the 7→21 agent work can be scoped or built.
+>
+> Related: are the "21 agents" real shipping features in MarketplaceOS today, or a
+> roadmap / marketing claim? If they're aspirational, the real gap is smaller than 7-vs-21.
 
 ---
 
@@ -91,6 +127,23 @@ Current state verified in this repo:
   Two client inputs remain to activate: (1) real GA4 Measurement ID; (2) confirm
   the consent stance. See `ANALYTICS_SETUP.md` for the one-line activation.
 
+### A4. On-page SEO pass on the 8 marketing pages  — Priority: LOW/MEDIUM (PENDING, optional)
+- **Origin:** the marketing-site slice of the B5 SEO item. B5's *admin module* is
+  platform work and stays blocked (see Track B); this is the part we could ship in
+  `zenvend-site` independent of the platform repo.
+- **Audit (verified 2026-07-28, all 8 pages: index, about, agents, contact, faq,
+  marketplaces, pricing, product):**
+  - Present on every page: `<title>`, `meta name="description"`, inline-SVG favicon.
+  - Missing on every page: Open Graph tags, Twitter card, `canonical`.
+  - Missing site-wide: `sitemap.xml`, `robots.txt`, an `og:image` share asset.
+- **Work (when picked up):** add OG + Twitter card + canonical to each page, generate
+  `sitemap.xml` + `robots.txt`, add a simple OG share image (~2-3 hours).
+- **Decision needed first:** canonical / `og:url` / sitemap URLs need a confirmed
+  production domain (brand is `ZenVend.ai`; current host is `zenvend-site.fly.dev` —
+  not yet confirmed which is live). A relative-path-only pass is possible but weaker.
+- **Status (2026-07-28):** reviewed and **deferred by the client owner** — documented
+  only, no page changes made this pass. Resume once the production domain is confirmed.
+
 ---
 
 ## Track B — Platform / admin app — BLOCKED on missing repo
@@ -101,11 +154,63 @@ codebase is located and its stack is known.
 | # | Feature (PDF) | What it is | Priority | Notes |
 |---|---|---|---|---|
 | B1 | **AI agents 7 → 21** | Add analytics, fraud detection, SEO, CRM, payments, content moderation, workflow, seller performance, dispute analysis, tenant-health agents | HIGH | Biggest headline gap (7 vs 21). Each agent = its own build + config UI. Large. |
-| B2 | **Bug Reports module** | In-app "report a bug" + admin dashboard (status, notes, filter) | MEDIUM | Self-contained; good early win once repo found. |
+| B2 | **Bug Reports module** | In-app "report a bug" + admin dashboard (status, notes, filter) | MEDIUM | Self-contained; good early win once repo found. **BLOCKED — re-verified 2026-07-28** (see note below). |
 | B3 | **Backup & Restore module** | Admin creates/restores marketplace snapshots (listings, orders, settings; excludes Stripe creds/billing) | MEDIUM | Needs data-model snapshot strategy; test restore carefully. |
 | B4 | **Google Analytics admin module** | Admin pastes GA4 Measurement ID; auto-tracks page_view, view_item, begin_checkout, purchase | MEDIUM | Distinct from A3 (this is per-tenant, admin-configured). |
-| B5 | **SEO admin module** | Meta tags, Open Graph, XML sitemap, robots.txt, per-page overrides from admin | MEDIUM | Template-driven; moderate. |
+| B5 | **SEO admin module** | Meta tags, Open Graph, XML sitemap, robots.txt, per-page overrides from admin | MEDIUM | Template-driven; moderate. **BLOCKED — re-verified 2026-07-28** (see note below). Marketing-site slice tracked as A4. |
 | B6 | **Intercom in-platform** | Live chat inside the tenant app (buyers/sellers/admins) | LOW | Same Intercom snippet as A2, applied in-app. |
+
+### B2 (Bug Reports) — blocker re-verification, 2026-07-28
+
+Picked up B2 as the recommended first platform win. Before scoping, re-checked
+whether the platform/admin codebase is reachable anywhere:
+
+- **Local workspace:** only `zenvend-site` and `zenvend-design-concepts` present. Both
+  marketing-only. No platform/admin app.
+- **`digitalwillads` org (GitHub):** `zenvend-site`, `zenvend-design-concepts`, plus
+  unrelated repos (`bracesbar`, `immigration-lawyer-campaign`, `playbooks`). `playbooks`
+  is an internal research library, **not** the platform app.
+- **`Kneeshaw-Developments` org:** no zenvend platform/admin repo (only `hudson-bearings`,
+  `blindsco-services`, and misc `*-admin` repos unrelated to zenvend).
+
+**Conclusion:** the codebase that would host both the in-app reporter and the admin
+Bug Reports tab does not exist in any location I can access. B2 cannot be built. PDF
+page 5 confirms the requirement (in-platform issue reporting + centralized admin
+dashboard with status, internal notes, management); the detail-panel fields — reporter
+role, page URL, submit time, IP, user-agent, Status dropdown, Admin notes — come from
+the page-5 screenshot.
+
+**Decision (client, 2026-07-28):** log the blocker and move on; do not produce a spec
+or scaffold yet. B2 stays blocked pending the platform repo location (Open question #1).
+
+---
+
+### B5 (SEO admin module) — blocker confirmation, 2026-07-28
+
+Final gap-plan item. PDF pages 7-8 show the admin **SEO** tab: global meta (title,
+description, keywords), Open Graph & social (OG image URL, Twitter card type, `@site`,
+OG site name), sitemap toggles (enable XML sitemap; include active listings / browse /
+map pages), robots.txt editor (allow indexing/following, disallow paths, custom lines),
+listing-page title/description **templates** with `{title}` / `{description}` /
+`{marketplace_name}` / `{category}` / `{price}` tokens, and per-page overrides
+(Homepage, Browse listings, Map view).
+
+Every one of those controls writes SEO output for the **tenant marketplace app** —
+they template listing/browse/map pages that only exist inside the platform. That
+codebase is not in any location we can access (same finding as B1 and B2 above:
+only `zenvend-site` + `zenvend-design-concepts` exist for zenvend). So the admin
+module itself cannot be built.
+
+**Split out — the one piece we CAN own:** the on-page SEO of the static marketing
+site. Audited all 8 `zenvend-site` pages (2026-07-28): each has `<title>` +
+`meta description` + a favicon, but **none** have Open Graph / Twitter / canonical,
+and the repo has no `sitemap.xml`, `robots.txt`, or `og:image`. That slice is
+tracked as **A4** in Track A.
+
+**Decision (client owner, 2026-07-28):** log B5's blocker; **defer** the A4 marketing
+pass for now (documented, no page changes) pending a confirmed production domain for
+canonical / OG / sitemap URLs. B5's admin module stays blocked on the platform repo
+(Open question #1).
 
 ---
 
@@ -115,6 +220,8 @@ codebase is located and its stack is known.
    version if full self-service isn't ready.
 2. **Now (needs one credential each):** A2 Intercom + A3 GA4 on the marketing site —
    both ~cheap, both need a client-supplied ID and a cookie-consent decision.
+2b. **Now (needs the production domain):** A4 on-page SEO pass (OG/Twitter/canonical +
+   sitemap.xml/robots.txt). ~2-3 hours; currently deferred pending the domain decision.
 3. **Parallel:** locate the platform repo / confirm ownership. This unblocks everything
    in Track B.
 4. **After repo found:** scope B2 (Bug Reports) and B4 (GA module) first as contained
@@ -128,3 +235,6 @@ codebase is located and its stack is known.
    (Determines whether A1 can become a real "Deploy Free.")
 3. Intercom **workspace/app_id**, and GA4 **Measurement ID**?
 4. Cookie-consent / privacy stance for adding Intercom + GA to the marketing site?
+5. What is the **confirmed production domain** for the marketing site — `zenvend.ai`
+   (the brand) or the current `zenvend-site.fly.dev`? (Needed to activate A4's
+   canonical / OG / sitemap URLs.)
