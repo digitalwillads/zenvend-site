@@ -1,12 +1,12 @@
 /* ============================================================
-   ZenVend.ai — site-wide interactions
+   ZenVend.ai - site-wide interactions
    Mobile nav · sticky-nav shadow · FAQ accordion · scroll reveal
    Lightweight console tracing/timing included per house rules.
    ============================================================ */
 (function () {
   "use strict";
   var t0 = performance.now();
-  console.log("[zenvend] init — page:", document.title);
+  console.log("[zenvend] init - page:", document.title);
 
   /* ---------- Mobile nav toggle ---------- */
   (function () {
@@ -43,7 +43,7 @@
   (function () {
     var items = document.querySelectorAll(".faq-item");
     if (!items.length) return;
-    console.log("[zenvend] FAQ accordion —", items.length, "items");
+    console.log("[zenvend] FAQ accordion -", items.length, "items");
     items.forEach(function (item) {
       var q = item.querySelector(".faq-q");
       var a = item.querySelector(".faq-a");
@@ -80,7 +80,7 @@
       });
     }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (el) { io.observe(el); });
-    console.log("[zenvend] reveal observing —", els.length, "elements");
+    console.log("[zenvend] reveal observing -", els.length, "elements");
   })();
 
   /* ---------- Demo contact form (no backend yet) ---------- */
@@ -91,14 +91,73 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var data = new FormData(form);
-      // Never log PII values — record only which fields were provided.
+      // Never log PII values, record only which fields were provided.
       var provided = [];
       data.forEach(function (v, k) { if (String(v).trim()) provided.push(k); });
-      console.log("[zenvend] demo form submitted — fields provided:", provided.join(", "));
-      console.warn("[zenvend] no form backend wired yet — submission not sent anywhere.");
+      console.log("[zenvend] demo form submitted - fields provided:", provided.join(", "));
+      console.warn("[zenvend] no form backend wired yet - submission not sent anywhere.");
       form.style.display = "none";
       if (success) success.classList.add("is-shown");
     });
+  })();
+
+  /* ---------- Intercom live chat (STAGED, INACTIVE) ----------
+     Site-wide live chat, matching MarketplaceOS. This file loads on every
+     page (before </body>), so enabling here covers all 8 pages at once
+     with no per-page footer duplication.
+
+     NOT LIVE YET. Two things must be resolved before go-live:
+       1. APP_ID below is empty. Paste the client's Intercom workspace
+          app_id to activate. While empty, this whole block is a no-op.
+       2. Cookie consent is UNRESOLVED (on hold pending client/legal).
+          Intercom sets first-party cookies (intercom-id, intercom-session),
+          and this site has no consent banner or privacy policy today.
+          Before activating, gate boot() on the site's consent decision
+          at the CONSENT GATE marker below.
+     Ref: ZENVEND_GAP_PLAN.md item A2. In-app portal is a separate task (B6).
+  */
+  (function () {
+    var APP_ID = ""; // paste Intercom workspace app_id here to activate
+
+    if (!APP_ID) {
+      console.log("[zenvend] intercom staged but inactive: no app_id set");
+      return;
+    }
+
+    /* CONSENT GATE: cookie-consent handling is not yet decided (on hold).
+       Once the stance is settled, wrap the boot() call below in the
+       appropriate consent check before shipping live. */
+
+    function boot() {
+      window.intercomSettings = { app_id: APP_ID };
+      // Standard Intercom loader snippet.
+      var w = window;
+      var ic = w.Intercom;
+      if (typeof ic === "function") {
+        ic("reattach_activator");
+        ic("update", w.intercomSettings);
+      } else {
+        var d = document;
+        var i = function () { i.c(arguments); };
+        i.q = [];
+        i.c = function (args) { i.q.push(args); };
+        w.Intercom = i;
+        var load = function () {
+          var s = d.createElement("script");
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://widget.intercom.io/widget/" + APP_ID;
+          var x = d.getElementsByTagName("script")[0];
+          x.parentNode.insertBefore(s, x);
+        };
+        if (d.readyState === "complete") { load(); }
+        else if (w.addEventListener) { w.addEventListener("load", load, false); }
+        else { w.attachEvent("onload", load); }
+      }
+      console.log("[zenvend] intercom booted");
+    }
+
+    boot();
   })();
 
   console.log("[zenvend] ready in", (performance.now() - t0).toFixed(1) + "ms");
