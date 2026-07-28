@@ -1,86 +1,100 @@
-# ZenVend — Gap-Closure Plan (vs MarketplaceOS)
+# ZenVend — Marketing-Site Verbiage Refresh (align site to Marketplace OS)
 
-Source: `Marketplace Points.pdf` (competitive comparison, Zenvend vs "MarketplaceOS").
-Prepared: 2026-07-28. Status: in progress. All 8 PDF items now reviewed. A3
-(marketing-site GA4) shipped dormant in PR #3; A2 (Intercom) boot snippet staged
-but inactive; A4 (on-page SEO pass, the marketing slice of B5) audited and deferred
-pending a confirmed production domain. Track B (6 platform/admin items, incl. the
-B5 SEO admin module) remains blocked on the missing platform repo.
+Source: `Marketplace Points.pdf`. Prepared 2026-07-28. **Reframed 2026-07-28** after a
+repo hunt + email-trail review — see "Scope correction" below.
 
-## TL;DR
+## Scope correction (READ FIRST) — "MarketplaceOS" is not a competitor
 
-The PDF lists **8 capabilities** MarketplaceOS has that Zenvend lacks. They split
-cleanly into two tracks:
+The PDF was initially read as a competitor comparison. It is not. Findings:
 
-- **2 items** are marketing-site work and live in **`zenvend-site`** (the repo we hold).
-- **6 items** are product/admin features of the **Zenvend platform app**, whose repo
-  is **NOT in this workspace or the `digitalwillads` org** (see "Missing repo" below).
-  These cannot be scoped or built until that codebase is located.
+- **`app.zenvend.ai` is live and serves the "Marketplace OS" app** (Next.js 15 /
+  React 19 / Supabase / Stripe, on someone else's Vercel). It matches the PDF's
+  "MarketplaceOS" screenshots verbatim ("Launch in minutes. Operate forever.",
+  21 agents, Intercom). **The "competitor" is ZenVend's own new/upgraded platform.**
+- **It was built by Monam Khalid, commissioned by Michael Leto** (per the June 8 2026
+  "AI Marketplace OS" brief and Michael's emails to Will). DWA was hired for the
+  **marketing site only**; the platform is not our code.
+- **The PDF is a verbiage spec, not a build spec.** Michael Leto, Jul 27: "The ZENVEND
+  sections are what you currently have — the Marketplace OS notes are what the verbiage
+  should be." It contrasts the *current site copy* against the *positioning the site
+  should adopt* now that the platform is upgraded.
+- **Confirmed 2026-07-28: DWA is NOT working on the platform.**
 
-Recommended sequence: ship the two `zenvend-site` wins now, in parallel confirm
-who owns the platform app, then plan the six platform features once we have the repo.
+**Therefore Track B below (build 21 agents, Bug Reports, Backups, GA/SEO admin
+modules, in-app Intercom) is OUT OF SCOPE — not "blocked on a missing repo."** The
+platform already exists and is owned by Michael Leto's developer. There is no repo for
+us to find or build. The whole engagement is: **update `zenvend-site` marketing copy to
+describe the Marketplace OS feature set and positioning.**
+
+## What the refresh actually is (the real deliverable)
+
+Rewrite/extend `zenvend-site` copy to match `app.zenvend.ai`'s positioning:
+
+- **CTA — now a real "Deploy Free."** The platform self-provisions (Will confirmed you
+  can sign up and build/operate a marketplace immediately at `app.zenvend.ai`), so the
+  A1 blocker is gone: the site can lead with "Deploy Free" pointing to `app.zenvend.ai`,
+  with "Book a demo" as secondary. (A1 below, reality-check now satisfied.)
+- **`agents.html`** currently advertises **"Seven agents. One calm operation"** and
+  names 7. The platform now runs the fuller agent roster shown in the PDF — this page's
+  copy should be expanded to match. **This is a copy update, not building agents.**
+- **Feature/positioning copy** — Bug Reports, Backups, built-in Analytics, SEO controls,
+  live chat, "Launch in minutes. Operate forever." messaging: describe these as
+  platform capabilities in the marketing copy where useful. Copy only.
+
+### Delivered in this pass (2026-07-28): brand-agnostic copy/CTA refresh ✅
+
+All work is copy/CTA only. The ZenVend name is kept (brand decision still open, see
+Open question #1); nothing was renamed to Marketplace OS.
+
+- **CTA → "Deploy free" (A1 done).** Every primary CTA is now **"Deploy free"** linking
+  to `https://app.zenvend.ai`, with **"Book a demo"** (→ `contact.html`) demoted to the
+  secondary/ghost button. Applied site-wide: nav (single primary, to avoid header
+  overflow), mobile menu (primary + secondary stacked), and every hero and final-CTA
+  cluster across all 8 pages. The Starter pricing tier CTA is also "Deploy free"; the Pro
+  tier keeps "Book a demo" (agency/sales-led). A greppable
+  `TODO(deploy-free-url)` comment sits in each page's nav flagging that the **exact
+  self-service signup path** still needs client confirmation (using `app.zenvend.ai`;
+  may be `/signup`). See Open question #2.
+- **`agents.html` expanded 7 → 20+.** Headline is now **"Twenty-plus agents. One calm
+  operation."** The 7 detailed core agents are kept; a new "wider roster" grid adds 11
+  more (Content Moderation, Review Authenticity, Buyer Recommendations, Cart Recovery,
+  CRM, Dispute Analysis, Operational Intelligence, Payments, Seller Performance, SEO,
+  Tenant Health Monitor). 18 agents are described; the count badge reads **"20+"** to
+  stay honest against the PDF's ~21 without inventing names. A `TODO(client)` comment
+  asks to confirm the full roster/exact count against `app.zenvend.ai`. Copy only, no
+  agents were built.
+- **Count synced site-wide.** "Seven"/"7" agent references on `index.html`, `faq.html`,
+  and `pricing.html` were updated to the "twenty-plus" / "full crew" framing so the site
+  no longer contradicts itself.
+- **Feature/positioning copy.** `product.html` capabilities now mention automated
+  backups + one-click restore, built-in live chat, and built-in SEO controls. The
+  "Launch in minutes. Operate forever." positioning already ran through the site and was
+  left intact.
+- **Left untouched (as instructed):** GA4 (`assets/analytics.js`, PR #3, dormant),
+  the staged Intercom snippet in `assets/main.js`, and the deferred on-page SEO
+  (OG/canonical/sitemap, A4). Note: those live on other branches and are not present in
+  this branch's base, so there was nothing to duplicate here.
+- **Em dashes:** removed from every line this pass rewrote, plus the mechanical
+  site-wide chrome (page `<title>`s, footer tagline, footer brand line) now use the
+  site's existing `·` separator. Pre-existing em dashes remain in deeper body prose on
+  every page (about/marketplaces/product especially) and are a recommended follow-up if
+  a full account-style purge is wanted; they were left to avoid rewriting untouched
+  client voice.
+
+**Open brand question for the client:** the app is branded **"Marketplace OS"** while
+the site is **"ZenVend."** Is the site being rebranded to Marketplace OS, or keeping the
+ZenVend name and just adopting the new positioning? This drives how far the copy pass goes.
 
 ---
 
-## Missing repo (blocker for 6 of 8 items)
-
-The PDF screenshots show a **tenant marketplace app** (`app.<marketplace>` URLs) and
-an **Admin Panel** with tabs: Overview, Transactions & Revenue, Listings, Users,
-Orders, Payments, Vendors, Moderation, AI Agents, Activity, Bug Reports, Backups,
-Analytics, SEO, Operations.
-
-Nothing like this exists in the workspace. The `digitalwillads` org contains only:
-- `zenvend-site` — static marketing site (this repo)
-- `zenvend-design-concepts` — 5 home-page concepts, review only
-
-**Action:** confirm with the client where the Zenvend platform/admin codebase lives
-(different org, private repo, hosted no-code/SaaS backend?). All "Platform track"
-items below are blocked on this answer.
-
-### Search performed 2026-07-28 (blocker confirmed, not just assumed)
-
-Looked everywhere the account can reach; the platform/admin app is in none of them:
-- **`digitalwillads` org** — only `zenvend-site` (this repo) and `zenvend-design-concepts`.
-- **All 5 orgs the account belongs to** (`digitalwillads`, `Kneeshaw-Developments`,
-  `PraxisPackaging`, `RPGme-ai`, `The-Ambitious-Exec`) — the only repo named "Platform"
-  is `RPGme-ai/Platform`, an unrelated game frontend.
-- **Global GitHub search** for `zenvend` / `marketplaceos` — the only ZenVend hits are
-  our two site repos; everything else (`scgssk/ZenVend*`, `r-muresan/Zenvend`,
-  `aravikishan/MarketplaceOS`) is an unrelated third party.
-
-Conclusion: the Admin Panel app shown in the PDF (AI Agents tab, `app.<marketplace>`
-tenant URLs) does not exist in any repository we can access. B1 (and all of Track B)
-stays blocked until the client points us to it.
-
-### Note for the client conversation (relevant to B1)
-
-`agents.html` in THIS repo publicly advertises **"Seven agents. One calm operation"**
-and names exactly 7 (Moderation, Listing Intelligence, Fraud Detection, Growth
-Optimization, Analytics Intelligence, Marketplace Architect, Workflow). So the 7-vs-21
-gap is in our own live marketing copy, not just an internal tally. If B1 proceeds,
-`agents.html` must be updated too — and that page IS in a repo we hold.
-
-### Exact question to send the client (B1 unblock)
-
-> Where does the ZenVend platform / admin application live — the app behind the Admin
-> Panel screenshots in the PDF (the one with the AI Agents tab and `app.<marketplace>`
-> tenant URLs)? Is it a private repo in another org, a repo we haven't been granted
-> access to, or a hosted no-code / SaaS backend? We need that codebase (and its stack)
-> before the 7→21 agent work can be scoped or built.
->
-> Related: are the "21 agents" real shipping features in MarketplaceOS today, or a
-> roadmap / marketing claim? If they're aspirational, the real gap is smaller than 7-vs-21.
-
----
-
-## Track A — Marketing site (`zenvend-site`) — actionable now
+## Track A — Marketing site (`zenvend-site`) — this IS the engagement
 
 Current state verified in this repo:
 - Every primary CTA is **"Book a demo"** (sales-led). No self-service path.
 - **No Intercom** live chat on any page.
 - **No Google Analytics / gtag** on any page.
 
-### A1. CTA strategy: sales-led vs self-service  — Priority: HIGH (decision needed)
+### A1. CTA strategy: sales-led vs self-service  — Priority: HIGH  ✅ DONE (copy/CTA)
 - **Gap:** MarketplaceOS leads with "Deploy Free" (instant self-service). Zenvend
   leads with "Book a demo" (form → sales follow-up).
 - **Reality check:** "Deploy Free" only works if the platform actually supports
@@ -146,10 +160,15 @@ Current state verified in this repo:
 
 ---
 
-## Track B — Platform / admin app — BLOCKED on missing repo
+## Track B — Platform / admin app — OUT OF SCOPE
 
-Scope estimates below are indicative only; they cannot start until the platform
-codebase is located and its stack is known.
+**Not our work.** These are features of `app.zenvend.ai` (the Marketplace OS platform),
+built by Michael Leto's developer (Monam Khalid), not by DWA. Confirmed 2026-07-28 that
+DWA is not working on the platform. The table is kept only as a reference for what the
+*marketing copy* should describe — none of it is a build task for us. The earlier
+"blocked on a missing repo" framing was based on misreading the PDF as a competitor
+comparison; there is no repo for us to find. Where a PDF item has a legitimate
+**marketing-site** slice, it is tracked in Track A (e.g. the on-page SEO slice = A4).
 
 | # | Feature (PDF) | What it is | Priority | Notes |
 |---|---|---|---|---|
@@ -216,25 +235,31 @@ canonical / OG / sitemap URLs. B5's admin module stays blocked on the platform r
 
 ## Recommended order of operations
 
-1. **Now (no blockers):** decide A1 CTA approach with client; ship the secondary-CTA
-   version if full self-service isn't ready.
-2. **Now (needs one credential each):** A2 Intercom + A3 GA4 on the marketing site —
-   both ~cheap, both need a client-supplied ID and a cookie-consent decision.
-2b. **Now (needs the production domain):** A4 on-page SEO pass (OG/Twitter/canonical +
-   sitemap.xml/robots.txt). ~2-3 hours; currently deferred pending the domain decision.
-3. **Parallel:** locate the platform repo / confirm ownership. This unblocks everything
-   in Track B.
-4. **After repo found:** scope B2 (Bug Reports) and B4 (GA module) first as contained
-   wins, then the larger B1 (agents 7→21), B3 (backups), B5 (SEO), B6 (in-app chat).
+All work is Track A (marketing copy in `zenvend-site`). Track B is out of scope.
+
+1. **Get the brand + CTA decision (below).** Whether the site rebrands to Marketplace OS
+   drives the size of the copy pass.
+2. **A1 CTA → "Deploy Free."** Blocker resolved (platform self-provisions at
+   `app.zenvend.ai`). Lead with "Deploy Free" → `app.zenvend.ai`, keep "Book a demo"
+   secondary. Confirm the exact signup URL with the client.
+3. **`agents.html` + feature/positioning copy** to match Marketplace OS (7→21 agents as
+   *copy*, "Launch in minutes" messaging, describe Bug Reports/Backups/Analytics/SEO/chat
+   as platform capabilities). This is the core of the refresh.
+4. **A2 Intercom + A3 GA4** — already staged/dormant; activate once the client supplies
+   the `app_id` / Measurement ID and a consent stance.
+5. **A4 on-page SEO pass** once the production domain is confirmed.
 
 ## Open questions for the client
 
-1. Where does the Zenvend **platform/admin** codebase live? (Track B is fully blocked
-   on this.)
-2. Does the platform support **self-service signup + instant provisioning** today?
-   (Determines whether A1 can become a real "Deploy Free.")
+1. **Brand:** is the site rebranding **ZenVend → Marketplace OS**, or keeping ZenVend and
+   just adopting the new positioning? (The app is branded Marketplace OS.)
+2. **CTA target:** confirm the exact self-service signup URL for "Deploy Free"
+   (`app.zenvend.ai`?).
 3. Intercom **workspace/app_id**, and GA4 **Measurement ID**?
-4. Cookie-consent / privacy stance for adding Intercom + GA to the marketing site?
-5. What is the **confirmed production domain** for the marketing site — `zenvend.ai`
-   (the brand) or the current `zenvend-site.fly.dev`? (Needed to activate A4's
-   canonical / OG / sitemap URLs.)
+4. Cookie-consent / privacy stance for activating Intercom + GA on the marketing site?
+5. **Production domain** — `zenvend.ai` or the current `zenvend-site.fly.dev`? (Needed to
+   activate A4's canonical / OG / sitemap URLs.)
+
+> Platform ownership is resolved: `app.zenvend.ai` (Marketplace OS) belongs to Michael
+> Leto's developer (Monam Khalid); DWA does not build or maintain it. No "where is the
+> repo" question remains.
