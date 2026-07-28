@@ -206,6 +206,9 @@ img { max-width: 100%; display: block; }
 .nav__links a[aria-current="page"]::after { transform: scaleX(1); }
 
 .nav__cta { display: flex; align-items: center; gap: 14px; }
+/* Secondary nav CTA ("See it live") shows only on wide desktop; the mobile menu
+   carries it below 940px, so hide it in the tight 940-1080px band to avoid crowding. */
+@media (max-width: 1080px) { .nav__cta .btn--ghost { display: none; } }
 
 .hamburger {
   display: none; flex-direction: column; justify-content: center; gap: 5px;
