@@ -1,12 +1,12 @@
 /* ============================================================
-   ZenVend.ai — site-wide interactions
+   ZenVend.ai - site-wide interactions
    Mobile nav · sticky-nav shadow · FAQ accordion · scroll reveal
    Lightweight console tracing/timing included per house rules.
    ============================================================ */
 (function () {
   "use strict";
   var t0 = performance.now();
-  console.log("[zenvend] init — page:", document.title);
+  console.log("[zenvend] init - page:", document.title);
 
   /* ---------- Mobile nav toggle ---------- */
   (function () {
@@ -43,7 +43,7 @@
   (function () {
     var items = document.querySelectorAll(".faq-item");
     if (!items.length) return;
-    console.log("[zenvend] FAQ accordion —", items.length, "items");
+    console.log("[zenvend] FAQ accordion -", items.length, "items");
     items.forEach(function (item) {
       var q = item.querySelector(".faq-q");
       var a = item.querySelector(".faq-a");
@@ -80,7 +80,7 @@
       });
     }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (el) { io.observe(el); });
-    console.log("[zenvend] reveal observing —", els.length, "elements");
+    console.log("[zenvend] reveal observing -", els.length, "elements");
   })();
 
   /* ---------- Demo contact form (no backend yet) ---------- */
@@ -91,11 +91,11 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var data = new FormData(form);
-      // Never log PII values — record only which fields were provided.
+      // Never log PII values, record only which fields were provided.
       var provided = [];
       data.forEach(function (v, k) { if (String(v).trim()) provided.push(k); });
-      console.log("[zenvend] demo form submitted — fields provided:", provided.join(", "));
-      console.warn("[zenvend] no form backend wired yet — submission not sent anywhere.");
+      console.log("[zenvend] demo form submitted - fields provided:", provided.join(", "));
+      console.warn("[zenvend] no form backend wired yet - submission not sent anywhere.");
       form.style.display = "none";
       if (success) success.classList.add("is-shown");
     });
